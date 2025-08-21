@@ -2,8 +2,6 @@
 
 A professional, production-ready web application that enables users to query PostgreSQL databases using natural language powered by AI. Built with a Python FastAPI backend and Next.js frontend, integrated with OpenRouter API.
 
-![AskPostgres Demo](https://via.placeholder.com/800x400/3B82F6/FFFFFF?text=AskPostgres+Demo)
-
 ## 🏗️ Architecture
 
 - **Backend**: Python FastAPI with async PostgreSQL support
