@@ -11,7 +11,7 @@
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13+-blue?style=flat-square&logo=postgresql)](https://postgresql.org)
 [![OpenRouter](https://img.shields.io/badge/OpenRouter-AI%20API-green?style=flat-square)](https://openrouter.ai)
 
-[🚀 Quick Start](#-quick-start) • [📖 Features](#-features) • [🎯 Examples](#-example-queries) • [🤝 Contributing](#-contributing)
+[🚀 Quick Start](#-quick-start) • [✨ Features](#-features) • [🎯 Examples](#-example-queries) • [🤝 Contributing](#-contributing)
 
 </div>
 
@@ -44,39 +44,7 @@ AskPostgres is a sophisticated AI-powered database assistant that transforms nat
 - **Secure Configuration**: Environment-based secrets management
 - **Comprehensive Logging**: Detailed application monitoring
 
-## 📸 Screenshots
 
-### 🌙 Dark Theme Interface
-
-<div align="center">
-
-**Professional Dark Theme with Query Results**
-![Dark Theme - Query Interface](https://i.imgur.com/placeholder-dark-query.png)
-*Sleek dark interface showing query execution with performance metrics and data visualization*
-
-**Database Overview Dashboard**
-![Dark Theme - Database Overview](https://i.imgur.com/placeholder-dark-overview.png)
-*Database connection status with table and column statistics*
-
-</div>
-
-### ☀️ Light Theme Interface
-
-<div align="center">
-
-**Clean Light Theme with Results Display**
-![Light Theme - Query Results](https://i.imgur.com/placeholder-light-results.png)
-*Professional light theme with sortable data tables and export functionality*
-
-**Intuitive Query Input Interface**
-![Light Theme - Query Input](https://i.imgur.com/placeholder-light-input.png)
-*User-friendly query input with example suggestions and smart autocomplete*
-
-**Advanced Features & Export Options**
-![Light Theme - Advanced Features](https://i.imgur.com/placeholder-light-advanced.png)
-*Advanced query features with multiple export formats and data visualization*
-
-</div>
 
 ## 🚀 Quick Start
 
@@ -226,14 +194,4 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 - **[PostgreSQL](https://postgresql.org/)** for robust database capabilities
 - **The Open Source Community** for inspiration and tools
 
----
 
-<div align="center">
-
-**Made with ❤️ for the developer community**
-
-[⭐ Star this repo](https://github.com/yourusername/AskPostgres) • [🐛 Report Bug](https://github.com/yourusername/AskPostgres/issues) • [💡 Request Feature](https://github.com/yourusername/AskPostgres/issues)
-
-**Follow for more projects**: [GitHub](https://github.com/yourusername) • [LinkedIn](https://linkedin.com/in/yourusername) • [Twitter](https://twitter.com/yourusername)
-
-</div>
