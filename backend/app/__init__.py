@@ -1,1 +1,0 @@
-# AskPostgres Backend Application

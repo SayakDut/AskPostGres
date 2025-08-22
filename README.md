@@ -1,406 +1,239 @@
-# AskPostgres 🐘💬
+# 🐘 AskPostgres
 
-A professional, production-ready web application that enables users to query PostgreSQL databases using natural language powered by AI. Built with a Python FastAPI backend and Next.js frontend, integrated with OpenRouter API.
+<div align="center">
 
-## 🏗️ Architecture
+![AskPostgres Logo](https://img.shields.io/badge/AskPostgres-AI%20Database%20Assistant-blue?style=for-the-badge&logo=postgresql&logoColor=white)
 
-- **Backend**: Python FastAPI with async PostgreSQL support
-- **Frontend**: Next.js 14 with React 18 and TypeScript
-- **Database**: PostgreSQL with read-only query enforcement
-- **AI Integration**: OpenRouter API with GPT-OSS-20B model
-- **Communication**: RESTful API between frontend and backend
+**Query your PostgreSQL database using natural language powered by AI**
+
+[![Python](https://img.shields.io/badge/Python-3.8+-blue?style=flat-square&logo=python)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-red?style=flat-square&logo=streamlit)](https://streamlit.io)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-13+-blue?style=flat-square&logo=postgresql)](https://postgresql.org)
+[![OpenRouter](https://img.shields.io/badge/OpenRouter-AI%20API-green?style=flat-square)](https://openrouter.ai)
+
+[🚀 Quick Start](#-quick-start) • [📖 Features](#-features) • [🎯 Examples](#-example-queries) • [🤝 Contributing](#-contributing)
+
+</div>
+
+---
+
+## 🌟 Overview
+
+AskPostgres is a sophisticated AI-powered database assistant that transforms natural language questions into SQL queries. Built with modern technologies and featuring both light and dark themes, it provides an intuitive interface for database exploration and analysis.
 
 ## ✨ Features
 
-- **Natural Language Queries**: Ask questions in plain English and get SQL results
-- **AI-Powered**: Uses OpenRouter API with GPT-OSS-20B model for SQL generation
-- **Secure by Design**: Read-only queries only, comprehensive input validation
-- **Interactive Results**: Sortable, filterable, paginated data tables with TanStack Table
-- **Real-time Feedback**: Loading states, error handling, and toast notifications
-- **Modern UI**: Built with Tailwind CSS and Framer Motion animations
-- **Rate Limited**: Built-in API rate limiting (30 requests/minute)
-- **Export Functionality**: Download results as CSV
-- **Professional Logging**: Structured logging with request tracking
-- **Health Monitoring**: Health check endpoints for system monitoring
+### 🎯 **Core Capabilities**
+- **Natural Language Processing**: Convert plain English to SQL queries
+- **Real-time Query Execution**: Instant results with performance metrics
+- **Smart Schema Analysis**: Automatic database structure understanding
+- **Export Functionality**: Download results in multiple formats (CSV, JSON, Excel)
+- **Query History**: Track and revisit previous queries
+
+### 🎨 **User Experience**
+- **Dual Theme Support**: Professional light and dark modes
+- **Responsive Design**: Works seamlessly across devices
+- **Interactive Results**: Sortable and filterable data tables
+- **Performance Metrics**: Query execution time and confidence scores
+- **Error Handling**: Intelligent error messages and suggestions
+
+### 🔧 **Technical Features**
+- **Multiple AI Models**: Support for various LLM providers via OpenRouter
+- **Connection Pooling**: Efficient database connection management
+- **Rate Limiting**: Built-in API usage optimization
+- **Secure Configuration**: Environment-based secrets management
+- **Comprehensive Logging**: Detailed application monitoring
+
+## 📸 Screenshots
+
+### 🌙 Dark Theme Interface
+
+<div align="center">
+
+**Professional Dark Theme with Query Results**
+![Dark Theme - Query Interface](https://i.imgur.com/placeholder-dark-query.png)
+*Sleek dark interface showing query execution with performance metrics and data visualization*
+
+**Database Overview Dashboard**
+![Dark Theme - Database Overview](https://i.imgur.com/placeholder-dark-overview.png)
+*Database connection status with table and column statistics*
+
+</div>
+
+### ☀️ Light Theme Interface
+
+<div align="center">
+
+**Clean Light Theme with Results Display**
+![Light Theme - Query Results](https://i.imgur.com/placeholder-light-results.png)
+*Professional light theme with sortable data tables and export functionality*
+
+**Intuitive Query Input Interface**
+![Light Theme - Query Input](https://i.imgur.com/placeholder-light-input.png)
+*User-friendly query input with example suggestions and smart autocomplete*
+
+**Advanced Features & Export Options**
+![Light Theme - Advanced Features](https://i.imgur.com/placeholder-light-advanced.png)
+*Advanced query features with multiple export formats and data visualization*
+
+</div>
 
 ## 🚀 Quick Start
 
 ### Prerequisites
-
-- Python 3.8+ with pip
-- Node.js 18+ and npm/yarn
-- PostgreSQL database (local or remote)
-- OpenRouter API key (free tier available)
+- **Python 3.8+**
+- **PostgreSQL database** (local or remote)
+- **OpenRouter API key** ([Get free key](https://openrouter.ai/))
 
 ### Installation
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd askpostgres
+   git clone https://github.com/yourusername/AskPostgres.git
+   cd AskPostgres
    ```
 
-2. **Backend Setup (Python FastAPI)**
+2. **Create virtual environment**
    ```bash
-   cd backend
-
-   # Create virtual environment
    python -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
 
-   # Install dependencies
+3. **Install dependencies**
+   ```bash
    pip install -r requirements.txt
-
-   # Set up environment variables
-   cp .env.example .env
    ```
 
-   Edit `backend/.env` with your configuration:
-   ```env
-   # PostgreSQL Database Configuration
-   POSTGRES_HOST=localhost
-   POSTGRES_PORT=5432
-   POSTGRES_DB=your_database_name
-   POSTGRES_USER=your_username
-   POSTGRES_PASSWORD=your_password
-
-   # OpenRouter API Configuration
-   OPENROUTER_API_KEY=your_openrouter_api_key_here
-
-   # Application Configuration
-   SITE_URL=http://localhost:3000
-   SITE_NAME=AskPostgres
-   SECRET_KEY=your-secret-key-here
-   ```
-
-3. **Frontend Setup (Next.js)**
+4. **Configure environment**
    ```bash
-   cd frontend
-
-   # Install dependencies
-   npm install
-   # or
-   yarn install
-
-   # Set up environment variables
-   cp .env.example .env
+   # Edit .env with your database and API credentials
+   # The file is already included with placeholder values
    ```
 
-   Edit `frontend/.env` with your configuration:
-   ```env
-   NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api/v1
-   ```
-
-4. **Start the applications**
-
-   **Backend (Terminal 1):**
+5. **Run the application**
    ```bash
-   cd backend
-   uvicorn main:app --reload --host 0.0.0.0 --port 8000
+   streamlit run app.py
    ```
 
-   **Frontend (Terminal 2):**
-   ```bash
-   cd frontend
-   npm run dev
-   ```
+6. **Open your browser**
+   Navigate to `http://localhost:8501`
 
-5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
-
-## 🔧 Configuration
-
-### Database Setup
-
-Ensure your PostgreSQL database is running and accessible. The application requires:
-- Read access to your database tables
-- Connection to the `information_schema` for table introspection
-
-### OpenRouter API Key
-
-1. Sign up at [OpenRouter](https://openrouter.ai/)
-2. Get your free API key
-3. Add it to your `.env` file
-
-The application uses the free `openai/gpt-oss-20b:free` model by default.
-
-## 🛡️ Security Features
-
-- **Read-Only Queries**: Only SELECT statements are allowed
-- **SQL Injection Prevention**: Comprehensive input validation and sanitization
-- **Rate Limiting**: 30 requests per minute per IP address
-- **Query Validation**: Multi-layer security checks on generated SQL
-- **Input Sanitization**: All user inputs are cleaned and validated
-- **Environment Isolation**: All sensitive data in environment variables
-
-## 📊 Usage Examples
-
-### Example Queries
-
-Try these natural language queries:
-
-- "Show me all users who registered this month"
-- "What are the top 10 best-selling products?"
-- "Find customers with orders over $1000"
-- "Show me the average order value by month"
-- "List all products that are out of stock"
-
-### API Endpoints
-
-#### POST `/api/query`
-Execute a natural language query
-
-**Request:**
-```json
-{
-  "query": "Show me all users who signed up last week"
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "data": {
-    "originalQuery": "Show me all users who signed up last week",
-    "generatedSQL": "SELECT * FROM users WHERE created_at >= NOW() - INTERVAL '7 days' LIMIT 100",
-    "explanation": "This query retrieves all users who registered in the last 7 days",
-    "confidence": 0.95,
-    "results": [...],
-    "resultCount": 42,
-    "warnings": []
-  }
-}
-```
-
-#### GET `/api/schema`
-Get database schema information
-
-**Response:**
-```json
-{
-  "success": true,
-  "data": {
-    "tables": [...],
-    "tableCount": 5,
-    "totalColumns": 23
-  }
-}
-```
-
-## 🏗️ Project Structure
-
-```
-askpostgres/
-├── backend/                    # Python FastAPI Backend
-│   ├── app/
-│   │   ├── __init__.py
-│   │   ├── config.py          # Configuration settings
-│   │   ├── database.py        # PostgreSQL connection and queries
-│   │   ├── llm.py            # OpenRouter API integration
-│   │   ├── models.py         # Pydantic models for API
-│   │   ├── routes.py         # API route handlers
-│   │   └── security.py       # Security and validation utilities
-│   ├── main.py               # FastAPI application entry point
-│   ├── requirements.txt      # Python dependencies
-│   └── .env.example         # Backend environment variables
-├── frontend/                  # Next.js Frontend
-│   ├── app/
-│   │   ├── globals.css       # Global styles
-│   │   ├── layout.tsx        # Root layout
-│   │   └── page.tsx          # Main application page
-│   ├── components/           # React components
-│   │   ├── ErrorMessage.tsx
-│   │   ├── LoadingSpinner.tsx
-│   │   ├── QueryInput.tsx
-│   │   ├── ResultsTable.tsx
-│   │   └── Toast.tsx
-│   ├── hooks/               # Custom React hooks
-│   │   └── useToast.ts
-│   ├── lib/                 # Frontend utilities
-│   │   └── api.ts           # Backend API client
-│   ├── package.json         # Frontend dependencies
-│   └── .env.example        # Frontend environment variables
-└── README.md               # This file
-```
-
-## 🔧 Development
-
-### Backend Development (Python FastAPI)
-
-**Available Scripts:**
-```bash
-cd backend
-
-# Start development server
-uvicorn main:app --reload
-
-# Or use the run script
-python run.py
-
-# Run tests (if implemented)
-pytest
-
-# Format code
-black .
-isort .
-```
-
-**Adding New Features:**
-1. **Database Functions**: Add to `app/database.py`
-2. **API Endpoints**: Add to `app/routes.py`
-3. **Security Rules**: Update `app/security.py`
-4. **Data Models**: Add to `app/models.py`
-
-### Frontend Development (Next.js)
-
-**Available Scripts:**
-```bash
-cd frontend
-
-# Start development server
-npm run dev
-
-# Build for production
-npm run build
-
-# Start production server
-npm run start
-
-# Run linting
-npm run lint
-```
-
-**Adding New Features:**
-1. **UI Components**: Create in `components/`
-2. **API Integration**: Update `lib/api.ts`
-3. **Custom Hooks**: Add to `hooks/`
-4. **Styling**: Update Tailwind classes or `app/globals.css`
-
-## 🚀 Deployment
-
-### Docker Compose (Recommended for Development)
-
-```bash
-# Set your OpenRouter API key
-export OPENROUTER_API_KEY=your_api_key_here
-
-# Start all services
-docker-compose up -d
-
-# View logs
-docker-compose logs -f
-
-# Stop services
-docker-compose down
-```
-
-### Production Deployment
-
-**Backend (FastAPI):**
-- Deploy to services like Railway, Render, or AWS ECS
-- Use environment variables for configuration
-- Set up proper logging and monitoring
-
-**Frontend (Next.js):**
-- Deploy to Vercel, Netlify, or similar platforms
-- Configure `NEXT_PUBLIC_API_BASE_URL` to point to your backend
-
-**Database:**
-- Use managed PostgreSQL services like AWS RDS, Google Cloud SQL, or Supabase
-- Ensure proper security groups and access controls
+## ⚙️ Configuration
 
 ### Environment Variables
 
-**Backend (.env):**
+Edit the included `.env` file with your actual values:
+
 ```env
-POSTGRES_HOST=your_db_host
+# Database Configuration
+POSTGRES_HOST=localhost
 POSTGRES_PORT=5432
 POSTGRES_DB=your_database
 POSTGRES_USER=your_username
 POSTGRES_PASSWORD=your_password
-OPENROUTER_API_KEY=your_openrouter_key
-SECRET_KEY=your_secret_key
-ALLOWED_ORIGINS=https://your-frontend-domain.com
+
+# AI Configuration
+OPENROUTER_API_KEY=your_api_key_here
+
+# Application Settings
+SITE_URL=http://localhost:8501
+STREAMLIT_THEME=light
+MAX_REQUESTS_PER_MINUTE=30
 ```
 
-**Frontend (.env):**
-```env
-NEXT_PUBLIC_API_BASE_URL=https://your-backend-api.com/api/v1
+### Database Setup
+
+Ensure your PostgreSQL database is accessible and contains the tables you want to query. The application will automatically analyze your schema and provide intelligent suggestions.
+
+## 🎯 Example Queries
+
+### 📊 Business Analytics
+- *"Show me the top 5 customers by revenue this year"*
+- *"What are the monthly sales trends for the last 6 months?"*
+- *"Find products with low inventory levels"*
+
+### 🔍 Data Exploration
+- *"List all tables in the database"*
+- *"Show me the structure of the users table"*
+- *"Find duplicate records in the orders table"*
+
+### ⚡ Performance Analysis
+- *"Which queries are taking the longest to execute?"*
+- *"Show database size and table statistics"*
+- *"Find unused indexes in the database"*
+
+## 🏗️ Architecture
+
 ```
+AskPostgres/
+├── src/
+│   ├── database.py          # Database connection and operations
+│   ├── llm.py              # AI model integration
+│   ├── security.py         # Security and validation
+│   ├── config.py           # Configuration management
+│   └── ui/
+│       └── components.py   # Streamlit interface components
+├── app.py                 # Main application entry point
+├── requirements.txt        # Python dependencies
+├── .env                   # Environment configuration (edit with your values)
+├── CONTRIBUTING.md        # Contribution guidelines
+└── README.md              # This file
+```
+
+## 🔒 Security
+
+- **🛡️ Environment Variables**: Sensitive data stored securely
+- **🔑 API Key Management**: Secure OpenRouter integration
+- **💉 SQL Injection Protection**: Parameterized queries and validation
+- **⏱️ Rate Limiting**: Built-in request throttling
+- **🚫 Read-Only Queries**: Only SELECT statements allowed
+- **🧹 Error Sanitization**: Safe error message handling
+
+## 🛠️ Development
+
+### Local Development Setup
+
+1. **Fork the repository**
+2. **Create a feature branch**: `git checkout -b feature-name`
+3. **Make your changes** and add tests
+4. **Run the test suite**: `pytest`
+5. **Submit a pull request**
+
+### Key Components
+
+- **`src/database.py`**: PostgreSQL connection and query execution
+- **`src/llm.py`**: OpenRouter API integration and prompt engineering
+- **`src/security.py`**: Input validation and SQL injection prevention
+- **`src/ui/components.py`**: Streamlit UI components and theming
 
 ## 🤝 Contributing
 
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
-## 📝 License
+### Ways to Contribute
+- 🐛 **Bug Reports**: Found an issue? Let us know!
+- 💡 **Feature Requests**: Have an idea? We'd love to hear it!
+- 📝 **Documentation**: Help improve our docs
+- 🧪 **Testing**: Add tests for better coverage
+- 🎨 **UI/UX**: Enhance the user interface
 
-This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🆘 Troubleshooting
-
-### Common Issues
-
-**Database Connection Failed**
-- Check your PostgreSQL server is running
-- Verify connection credentials in `.env`
-- Ensure database exists and user has access
-
-**OpenRouter API Errors**
-- Verify your API key is correct
-- Check you haven't exceeded rate limits
-- Ensure you have credits (if using paid models)
-
-**Build Errors**
-- Clear `.next` folder and rebuild
-- Check all environment variables are set
-- Verify Node.js version compatibility
-
-### Getting Help
-
-- Check the [Issues](https://github.com/your-repo/issues) page
-- Review the troubleshooting section above
-- Ensure all environment variables are properly configured
-- Check backend logs: `docker-compose logs backend`
-- Check frontend logs: `docker-compose logs frontend`
-
-## 🧪 Testing
-
-### Backend Testing
-```bash
-cd backend
-pytest tests/
-```
-
-### Frontend Testing
-```bash
-cd frontend
-npm test
-```
-
-### API Testing
-Use the interactive API documentation at `http://localhost:8000/docs` when the backend is running.
-
-## 🔒 Security Features
-
-- **SQL Injection Prevention**: Multi-layer validation and sanitization
-- **Read-Only Enforcement**: Only SELECT queries allowed
-- **Rate Limiting**: 30 requests per minute per IP
-- **Input Validation**: Comprehensive input sanitization
-- **CORS Protection**: Configurable allowed origins
-- **Environment Isolation**: All secrets in environment variables
 
 ## 🙏 Acknowledgments
 
-- [FastAPI](https://fastapi.tiangolo.com/) - Modern Python web framework
-- [Next.js](https://nextjs.org/) - React framework
-- [OpenRouter](https://openrouter.ai/) - AI API platform
-- [PostgreSQL](https://www.postgresql.org/) - Advanced open source database
-- [TanStack Table](https://tanstack.com/table) - Data table library
-- [Framer Motion](https://www.framer.com/motion/) - Animation library
-- [Tailwind CSS](https://tailwindcss.com/) - CSS framework
-- [asyncpg](https://github.com/MagicStack/asyncpg) - Fast PostgreSQL adapter
+- **[Streamlit](https://streamlit.io/)** for the amazing web framework
+- **[OpenRouter](https://openrouter.ai/)** for democratizing AI model access
+- **[PostgreSQL](https://postgresql.org/)** for robust database capabilities
+- **The Open Source Community** for inspiration and tools
+
+---
+
+<div align="center">
+
+**Made with ❤️ for the developer community**
+
+[⭐ Star this repo](https://github.com/yourusername/AskPostgres) • [🐛 Report Bug](https://github.com/yourusername/AskPostgres/issues) • [💡 Request Feature](https://github.com/yourusername/AskPostgres/issues)
+
+**Follow for more projects**: [GitHub](https://github.com/yourusername) • [LinkedIn](https://linkedin.com/in/yourusername) • [Twitter](https://twitter.com/yourusername)
+
+</div>
