@@ -46,24 +46,21 @@ AskPostgres is a sophisticated AI-powered database assistant that transforms nat
 
 ## 📸 Screenshots
 
-### 🌙 Dark Theme Interface
-
-**Query Interface with Results**
-![Dark Theme - Query Results](./screenshots/5.png))
-
-**Database Overview Dashboard**
-![Dark Theme - Database Overview](./screenshots/4.png))
-
 ### ☀️ Light Theme Interface
-
-**Clean Query Results Display**
-![Light Theme - Query Results](./screenshots/3.png))
 
 **Intuitive Query Input**
 ![Light Theme - Query Input](./screenshots/1.png))
 
-**Advanced Features & Export**
-![Light Theme - Advanced Features](./screenshots/2.png))
+**Clean Query Results Display**
+![Light Theme - Query Results](./screenshots/3.png))
+
+### 🌙 Dark Theme Interface
+
+**Database Overview Dashboard**
+![Dark Theme - Database Overview](./screenshots/4.png))
+
+**Query Interface with Results**
+![Dark Theme - Query Results](./screenshots/5.png))
 
 
 ## 🚀 Quick Start
