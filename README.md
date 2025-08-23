@@ -49,21 +49,21 @@ AskPostgres is a sophisticated AI-powered database assistant that transforms nat
 ### 🌙 Dark Theme Interface
 
 **Query Interface with Results**
-![Dark Theme - Query Results](https://github.com/user-attachments/assets/dark-theme-query-results.png)
+![Dark Theme - Query Results]([https://github.com/user-attachments/assets/dark-theme-query-results.png](https://github.com/SayakDut/AskPostGres/blob/0d5c452c958e8ea63acfe45db452457377a7db38/screenshots/5.png))
 
 **Database Overview Dashboard**
-![Dark Theme - Database Overview](https://github.com/user-attachments/assets/dark-theme-overview.png)
+![Dark Theme - Database Overview]([https://github.com/user-attachments/assets/dark-theme-overview.png](https://github.com/SayakDut/AskPostGres/blob/0d5c452c958e8ea63acfe45db452457377a7db38/screenshots/4.png))
 
 ### ☀️ Light Theme Interface
 
 **Clean Query Results Display**
-![Light Theme - Query Results](https://github.com/user-attachments/assets/light-theme-results.png)
+![Light Theme - Query Results]([https://github.com/user-attachments/assets/light-theme-results.png](https://github.com/SayakDut/AskPostGres/blob/0d5c452c958e8ea63acfe45db452457377a7db38/screenshots/3.png))
 
 **Intuitive Query Input**
-![Light Theme - Query Input](https://github.com/user-attachments/assets/light-theme-input.png)
+![Light Theme - Query Input]([https://github.com/user-attachments/assets/light-theme-input.png](https://github.com/SayakDut/AskPostGres/blob/0d5c452c958e8ea63acfe45db452457377a7db38/screenshots/1.png))
 
 **Advanced Features & Export**
-![Light Theme - Advanced Features](https://github.com/user-attachments/assets/light-theme-advanced.png)
+![Light Theme - Advanced Features]([https://github.com/user-attachments/assets/light-theme-advanced.png](https://github.com/SayakDut/AskPostGres/blob/0d5c452c958e8ea63acfe45db452457377a7db38/screenshots/2.png))
 
 
 ## 🚀 Quick Start
